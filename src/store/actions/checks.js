@@ -2,15 +2,15 @@ import { FETCH_CHECKS_START, FETCH_CHECKS_SUCCESS, FETCH_CHECKS_FAILURE } from '
 
 import {fetchChecks as fetchChecksApi} from '../../api'
 
-export const fetchPhones = () => async dispatch => {
+export const fetchChecks = () => async dispatch => {
     dispatch({
         type: FETCH_CHECKS_START
     })
     try {
-        const phones = await fetchChecksApi()
+        const checks = await fetchChecksApi()
         dispatch({
             type: FETCH_CHECKS_SUCCESS,
-            payload: phones
+            payload: checks
         })
     } catch (error) {
         dispatch({

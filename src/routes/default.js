@@ -9,8 +9,8 @@ import Done from '../pages/checks/done'
 export const routes = (
     <Switch>
         <Route path='/' component={Phones} exact/>
-        <Route path='/checks/new' component={New} exact/>
-        <Route path='/checks/process' component={Process} exact/>
-        <Route path='/checks/done' component={Done} exact/>
+        <Route path='/checks/new' component={New}/>
+        <Route path='/checks/process' component={Process}/>
+        <Route path='/checks/done' component={Done}/>
     </Switch>
 )

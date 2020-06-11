@@ -4,6 +4,7 @@ export default [
             id: 1,
             checkTypeId: 1,
             checkStateId: 1,
+            name: 'Проверка 1'
         },
         items: [
             {
@@ -76,6 +77,7 @@ export default [
             id: 2,
             checkTypeId: 2,
             checkStateId: 2,
+            name: 'Проверка 2'
         },
         items: [
             {
@@ -148,6 +150,7 @@ export default [
             id: 2,
             checkTypeId: 3,
             checkStateId: 3,
+            name: 'Проверка 3'
         },
         items: [
             {
