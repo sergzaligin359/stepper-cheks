@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerLeft({ routes }) {
+export default function PersistentDrawerLeft({ children }) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -137,7 +137,7 @@ export default function PersistentDrawerLeft({ routes }) {
         })}
       >
         <div className={classes.drawerHeader} />
-        { routes }
+        { children }
       </main>
     </div>
   );

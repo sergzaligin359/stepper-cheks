@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import DataTable from '../../../components/Datatable'
+import Layout from '../../../layouts/default'
 
 import { fetchChecks } from '../../../store/actions'
 
@@ -18,9 +19,9 @@ export default () => {
     console.log('Checks', checks)
 
     return (
-        <>
-        <h3>Check new page</h3>
-        <DataTable />
-        </>
+        <Layout>
+            <h3>Check new page</h3>
+            <DataTable />
+        </Layout>
     )
 }

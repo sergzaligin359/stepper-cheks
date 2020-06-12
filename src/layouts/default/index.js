@@ -1,10 +1,9 @@
 import React from 'react'
-import { routes } from '../../routes/default'
 
 import Drawer from '../../components/Drawer'
 
-export default () => {
+export default ({ children }) => {
     return (
-        <Drawer routes={ routes } />
+        <Drawer children={ children } />
     )
 }

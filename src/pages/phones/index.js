@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getPhones } from '../../selectors'
 import { fetchPhones } from '../../store/actions'
 
+import Layout from '../../layouts/default'
 
 export default () => {
 
@@ -17,8 +18,10 @@ export default () => {
     }, [dispatch])
 
     return (
-        <div>
-            <h1>Просто стартовая страница</h1>
-        </div>
+        <Layout>
+            <div>
+                <h1>Просто стартовая страница</h1>
+            </div>
+        </Layout>
     )
 }
