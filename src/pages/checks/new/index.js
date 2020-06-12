@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Button from '@material-ui/core/Button';
 
-import DataTable from '../../../components/Datatable'
 import Layout from '../../../layouts/default'
+import DataTable from '../../../components/Datatable'
+import Modal from '../../../components/Modal'
+import Check from '../components/Check'
 
 import { fetchChecks } from '../../../store/actions'
 
@@ -10,6 +13,8 @@ export default () => {
 
     const dispatch = useDispatch()
     const checks = useSelector(state => state.checks)
+    const [openModal, setOpenModal] = React.useState(false)
+    const [mode, setMode] = React.useState('')
 
     useEffect(() => {
         if(checks.length > 0) return
@@ -18,10 +23,43 @@ export default () => {
 
     console.log('Checks', checks)
 
+    const handleCreateCheck = () => {
+        setOpenModal(true)
+        setMode('create')
+    }
+
+    const handleCloseModal = () => {
+        setOpenModal(false)
+    }
+
     return (
         <Layout>
+            <div>
+
+            </div>
             <h3>Check new page</h3>
-            <DataTable />
+            <div>
+                <Button 
+                    onClick={ handleCreateCheck }
+                    variant="contained" 
+                    color="primary"
+                >
+                    Add check+
+                </Button>
+            </div>
+            <div>
+                <DataTable />
+            </div>
+            <div>
+                <Modal
+                    open={ openModal }
+                    handleClose={ handleCloseModal }
+                >
+                    <Check 
+                        mode={ mode }
+                    />
+                </Modal>
+            </div>
         </Layout>
     )
 }
