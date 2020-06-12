@@ -21,7 +21,7 @@ export default () => {
         dispatch(fetchChecks())
     }, [dispatch, checks.length])
 
-    console.log('Checks', checks)
+    console.log('Checks', checks.checks)
 
     const handleCreateCheck = () => {
         setOpenModal(true)
@@ -31,6 +31,17 @@ export default () => {
     const handleCloseModal = () => {
         setOpenModal(false)
     }
+
+    const columns = [
+        { 
+          title: 'Название проверки', 
+          field: 'name',
+          render: rowData => {
+            console.log('row data', rowData)
+            return <span>{ rowData.check.name }</span>
+          }
+        },
+    ]
 
     return (
         <Layout>
@@ -48,7 +59,10 @@ export default () => {
                 </Button>
             </div>
             <div>
-                <DataTable />
+                <DataTable 
+                    data={ checks.checks && checks.checks.filter(check => check.check.checkStateId === 1) } 
+                    columns={ columns }
+                />
             </div>
             <div>
                 <Modal
