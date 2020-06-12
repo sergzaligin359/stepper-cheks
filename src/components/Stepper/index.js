@@ -22,24 +22,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
-}
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return 'Step 1: Select campaign settings...';
-    case 1:
-      return 'Step 2: What is an ad group anyways?';
-    case 2:
-      return 'Step 3: This is the bit I really care about!';
-    default:
-      return 'Unknown step';
-  }
-}
 
-export default function HorizontalNonLinearStepper() {
+export default function HorizontalNonLinearStepper({ getSteps, getStepContent }) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
