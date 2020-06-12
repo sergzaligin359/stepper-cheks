@@ -4,7 +4,7 @@ import MaterialTable from 'material-table';
 export default function MaterialTableDemo() {
   const [state, setState] = React.useState({
     columns: [
-      { title: 'Name111', field: 'name', cell: () => <h1>22222</h1> },
+      { title: 'Name111', field: 'name' },
       { title: 'Surname', field: 'surname' },
       { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
       {

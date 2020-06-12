@@ -11,8 +11,9 @@ export default () => {
     const checks = useSelector(state => state.checks)
 
     useEffect(() => {
+        if(checks.length > 0) return
         dispatch(fetchChecks())
-    }, [dispatch])
+    }, [dispatch, checks.length])
 
     console.log('Checks', checks)
 

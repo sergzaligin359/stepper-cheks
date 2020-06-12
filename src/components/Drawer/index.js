@@ -125,6 +125,7 @@ export default function PersistentDrawerLeft({ routes }) {
         </div>
         <Divider />
             <ul>
+                <li><NavLink to="/">Главная</NavLink></li>
                 <li><NavLink to="/checks/new">Новая проверка</NavLink></li>
                 <li><NavLink to="/checks/process">В работе</NavLink></li>
                 <li><NavLink to="/checks/done">Завершенные</NavLink></li>
